@@ -1,0 +1,27 @@
+<?php
+
+namespace Database\Factories;
+
+use Illuminate\Database\Eloquent\Factories\Factory;
+
+/**
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Education>
+ */
+class EducationFactory extends Factory
+{
+    /**
+     * Define the model's default state.
+     *
+     * @return array<string, mixed>
+     */
+    public function definition(): array
+    {
+        return [
+            'school' => $this->faker->sentence,
+            'type' => $this->faker->sentence,
+            'course' => $this->faker->sentence,
+            'started' => $this->faker->dateTimeThisMonth,
+            'finished' => $this->faker->dateTimeThisMonth
+        ];
+    }
+}
