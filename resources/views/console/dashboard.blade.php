@@ -1,10 +1,15 @@
 @extends ('layout.console')
 
 @section ('content')
+<style>
+    .w3-tangerine {
+        font-family: 'Tangerine', serif;
+    }
+</style>
 
 <section class="w3-padding">
 
-    <ul id="dashboard">
+    <ul class="w3-ul w3-card-4" id="dashboard">
         <li><a href="/console/projects/list">Manage Projects</a></li>
         <li><a href="/console/types/list">Manage Types</a></li>
         <li><a href="/console/jobs/list">Manage Jobs</a></li>

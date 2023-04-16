@@ -17,8 +17,8 @@ class SkillFactory extends Factory
     public function definition(): array
     {
         return [
-            'title' => $this->faker->sentence,
-            'type' => $this->faker->sentence,
+            'title' => $this->faker->word,
+            'type' => $this->faker->word,
             'image' => $this->faker->paragraph,
 
 
