@@ -22,12 +22,15 @@
 
         @if (Auth::check())
         You are logged in as {{auth()->user()->first}} {{auth()->user()->last}} |
-        <a href="/console/logout">Log Out</a> |
-        <a href="/console/dashboard">Dashboard</a> |
-        <a href="/">Website Home Page</a>
-        @else
-        <a href="/">Return to My Portfolio</a>
-        @endif
+
+        <div class="w3-bar w3-border w3-black">
+            <a class="w3-bar-item w3-button" href="/console/logout">Log Out</a>
+            <a class="w3-bar-item w3-button" href="/console/dashboard">Dashboard</a>
+            <a class="w3-bar-item w3-button" href="/">Website Home Page</a>
+            @else
+            <a class="w3-bar-item w3-button" href="/">&laquo; Return to My Portfolio</a>
+            @endif
+        </div>
 
     </header>
 

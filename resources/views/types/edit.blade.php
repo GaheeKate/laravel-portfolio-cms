@@ -12,19 +12,22 @@
 
         <div class="w3-margin-bottom">
             <label for="title">Title:</label>
-            <input type="text" name="title" id="title" value="{{old('title', $type->title)}}" required>
-            
+            <input class="w3-input w3-border w3-round-large" type="text" name="title" id="title" value="{{old('title', $type->title)}}" required>
+
             @if ($errors->first('title'))
-                <br>
-                <span class="w3-text-red">{{$errors->first('title')}}</span>
+            <br>
+            <span class="w3-text-red">{{$errors->first('title')}}</span>
             @endif
         </div>
 
-        <button type="submit" class="w3-button w3-green">Edit Type</button>
+        <div class="w3-center" style="padding-top: 20px; ">
+            <button type="submit" class="w3-button w3-green" style="width:200px">Edit Type</button>
+        </div>
 
     </form>
-
-    <a href="/console/types/list">Back to Type List</a>
+    <div class="w3-bar w3-round">
+        <a href="/console/types/list" class="w3-button">&#10094; Back to Type List</a>
+    </div>
 
 </section>
 

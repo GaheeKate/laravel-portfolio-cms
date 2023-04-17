@@ -6,8 +6,8 @@
 
     <h2>Manage Education</h2>
 
-    <table class="w3-table w3-stripped w3-bordered w3-margin-bottom">
-        <tr class="w3-red">
+    <table class="w3-table w3-bordered w3-striped w3-border w3-hoverable">
+        <tr class="w3-blue-grey">
             <th>School</th>
             <th>Type</th>
             <th>Course</th>
@@ -16,20 +16,23 @@
             <th></th>
             <th></th>
         </tr>
-        @foreach ($educations as $education)
-        <tr>
-            <td>{{$education->school}}</td>
-            <td>{{$education->type}}</td>
-            <td>{{$education->course}}</td>
-            <td>{{ \Carbon\Carbon::parse($education->started)->format('d/m/Y g:i:s A')}}</td>
-            <td>{{ \Carbon\Carbon::parse($education->finished)->format('d/m/Y g:i:s A')}}</td>
-            <td><a href="/console/education/edit/{{$education->id}}">Edit</a></td>
-            <td><a href="/console/education/delete/{{$education->id}}">Delete</a></td>
-        </tr>
-        @endforeach
+        <?php foreach ($educations as $education) : ?>
+            <tr>
+                <td>{{$education->school}}</td>
+                <td>{{$education->type}}</td>
+                <td>{{$education->course}}</td>
+                <td>{{ \Carbon\Carbon::parse($education->started)->format('d/m/Y')}}</td>
+                <td>{{ \Carbon\Carbon::parse($education->finished)->format('d/m/Y')}}</td>
+                <td><a href="/console/educations/edit/{{$education->id}}">Edit</a></td>
+                <td><a href="/console/educations/delete/{{$education->id}}">Delete</a></td>
+            </tr>
+        <?php endforeach; ?>
     </table>
 
-    <a href="/console/education/add" class="w3-button w3-green">New Education</a>
+
+    <div class="w3-container" style="text-align: center; ">
+        <a href="/console/educations/add" class="w3-btn w3-teal w3-round-xlarge" style="margin-top: 20px;">New Education</a>
+    </div>
 
 </section>
 
